@@ -1,0 +1,17 @@
+{
+  "name": "millennium-falcon",
+  "version": "0.0.0",
+  "description": "Server for personal blog",
+  "main": "index.js",
+  "scripts": {
+	"start": "node server.js",
+    	"test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tony Gorez",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.11"
+  }
+}
