@@ -1,6 +1,6 @@
 var express = require('express'); 
 var router = express.Router(); 
-var bodyPaser = require('body-parser'); 
+var bodyParser = require('body-parser'); 
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 var Post = require('./Post');
@@ -8,8 +8,7 @@ var Post = require('./Post');
 router.post('/post', function (req, res) {
     Post.create({
             name : req.body.name,
-            email : req.body.email,
-            password : req.body.password
+            content : req.body.content
         }, 
         function (err, post) {
             if (err) return res.status(500).send("There was a problem adding post to the database.");
@@ -24,5 +23,10 @@ router.get('/post', function (req, res) {
     });
 });
 
+
+router.get('/', function (req, res) {
+        console.log("Ca marche");
+        res.status(200).send({ok:"ok"})
+});
 
 module.exports = router;
